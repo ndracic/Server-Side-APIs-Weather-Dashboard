@@ -37,10 +37,27 @@
               </div>
             </div>
         
-            <div class="col-12 col-md-8">
-              <h2 class="subtitle">Current Weather: <span id="weather-search-term"></span></h2>
-              <div id="repos-container" class="list-group"></div>
-            </div>
+            <div class="currentWeather col-md-8">
+                <div class="row p-2">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="cityDate info" data-text="City">Selected City</div>
+                      <br>
+                      <span class="temp info">Temperature:</span>
+                      <br>
+                      <span class="wind info">Wind gusts: </span>
+                      <br>
+                      <span class="humidity info">Humidity: </span>
+                      <br>
+                      <span class="uvIndex">UV-Index: </span>
+                    </div>
+                  </div>
+                  <div class="row forecast">
+                    <h3>5-Day-Forecast</h3>
+                  </div>
+                </div>
+                <div class="fiveDayForecast row"></div>
+              </div>
         </main>
 
     </div>
