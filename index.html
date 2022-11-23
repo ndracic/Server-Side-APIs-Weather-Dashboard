@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Check the Weather</title>
+</head>
+
+<body class="flex-column min-100-vh">
+    <div>
+
+        <header class="hero">
+            <h1 class="app-title"> Whats the Weather!</h1>
+            <p>Search for a City and check the current weather and the 5 day forecast!</p>
+        </header>
+
+        <main class="flex-row justify-space-between">
+            <div class="col-12 col-md-4">
+        
+              <div class="card">
+                <h3 class="card-header text-uppercase" >Search By city</h3>
+                <form id="city-form" class="card-body">
+                  <label class="form-label" for="cityname"></label>
+                  <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" placeholder="Search City"/>
+                  <button type="submit" class="btn">Go</button>
+                </form>
+              </div>
+
+    </div>
+
+    <script src="./assets/script.js"></script>
+</body>
+</html>
