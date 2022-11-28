@@ -6,62 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="./assets/style.css">
     <title>Check the Weather</title>
 </head>
 
 <body class="flex-column min-100-vh">
-    <div>
 
-        <header class="hero">
-            <h1 class="app-title"> Whats the Weather!</h1>
-            <p>Search for a City and check the current weather and the 5 day forecast!</p>
-        </header>
+    <header class="hero">
+        <h1 class="app-title"> 
+            Whats the Weather!
+        </h1>
+        <p>
+            Search for a City and check the current weather and the 5 day forecast!
+        </p>
+    </header>
 
-        <main class="flex-row justify-space-between">
-            <div class="col-12 col-md-4">
+<main class="flex-row justify-space-between">
+    <div class="col-12 col-sm-12 col-md-4 float-left">
         
-              <div class="card">
-                <h3 class="card-header text-uppercase" >Search By city</h3>
-                <form id="city-form" class="card-body">
-                  <label class="form-label" for="cityname"></label>
-                  <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" placeholder="Search City"/>
-                  <button type="submit" class="btn">Go</button>
-                </form>
-              </div>
-
-              <div class="card">
-                <h3 class="card-header text-uppercase">Searched Cities</h3>
-                <div id="stachedCities" class="card-body">
-                </div>
-              </div>
-            </div>
+        <div class="card">
+            <h3 class="card-header">Search by city</h3>
+                <div id="user-form" class="card-body">
+                  <input type="text" id="myInput" placeholder="Search your City..."/>
+                  <button class="btn" id="searchBtn">Go</button>
+        </div>
+    </div>
         
-            <div class="currentWeather col-md-8">
-                <div class="row p-2">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="cityDate info" data-text="City">Selected City</div>
-                      <br>
-                      <span class="temp info">Temperature:</span>
-                      <br>
-                      <span class="wind info">Wind gusts: </span>
-                      <br>
-                      <span class="humidity info">Humidity: </span>
-                      <br>
-                      <span class="uvIndex">UV-Index: </span>
-                    </div>
-                  </div>
-                  <div class="row forecast">
-                    <h3>5-Day-Forecast</h3>
-                  </div>
-                </div>
-                <div class="fiveDayForecast row"></div>
-              </div>
-        </main>
+    <div class="card history">
+        <h3 class="card-header">Previous Searches</h3>
+        </div>
+    </div>
+        
+    <div class="col-12 col-sm-12 col-md-8 float-right">
+      <div>
+        <h2 class="subtitle text-white bg-primary">Current Weather</h2>
+        <div class="city"></div>
+      </div>
 
+      <div>
+        <h2 class="subtitle text-white bg-dark">5-Day-forecast</h2>
+        <div class="five-day-forecast"></div>
+      </div>
+    </div>
+
+    
+          </main>
     </div>
 
     <script src="./assets/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"> </script>
+
 </body>
 </html>
