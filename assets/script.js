@@ -91,7 +91,7 @@ var Coordinants = function (lat, lon) {
 
 var forecast = function (data) {
     $('.forecast').empty();
-    for (let i = 1; i < 4; i++) {
+    for (let i = 1; i < 6; i++) {
   
       var day = $("<div class = 'day bg-color-light'><div />")
         $(day).append(date(data.daily[i].dt));

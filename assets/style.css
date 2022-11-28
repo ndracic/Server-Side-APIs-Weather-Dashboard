@@ -16,3 +16,6 @@ header {
     margin: 10px;
     border: 2px solid  rgb(249, 245, 247);
   }
+  button {
+    background: rgb(247, 247, 247);
+  }
