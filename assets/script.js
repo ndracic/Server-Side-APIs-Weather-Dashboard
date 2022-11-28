@@ -60,7 +60,7 @@ function searchedCitiesButton() {
     });
 
     var Coordinants = function (lat, lon) {
-        let conditionsAPI = 
+        var conditionsAPI = 
           `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=`+ key + `&units=imperial`
       
           // Fetch API
@@ -68,7 +68,27 @@ function searchedCitiesButton() {
             .then(function (response) {
               return response.json();
             }) .then(function(data) {
-
-            })
       
-      };
+                $('.currentTemp').text('Temperature: ' + data.current.temp + ' ℉');
+
+                $('.humidity').text('Humidity: ' + data.current.humidity + '%')
+
+                $('.windMPH').text('Wind: ' + data.current.wind_speed + ' miles per hour')
+
+                $('.uvIndex').html('UV Index: ' + `<span class="btnColor">${data.current.uvi}</span`);
+
+                if (data.current.uvi <= 2) {
+                  $('.btnColor').attr('class', 'btn btn-success');
+                };
+            
+                // > 2, <= 5
+                if (data.current.uvi > 2 && data.current.uvi <= 5) {
+                  $('.btnColor').attr('class', 'btn btn-warning');
+                };
+            
+                // > 5
+                if (data.current.uvi > 5) {
+                  $('.btnColor').attr('class', 'btn btn-danger');
+                };
+              });
+            };
