@@ -3,9 +3,9 @@ Third-party APIs allow developers to access their data and functionality by maki
 
 ## Table of Contents
 
-* [Installation](#installation)
+* [UserStory](#UserStory)
 * [Usage](#usage)
-* [Mock-up](#Mock-up)
+* [Mock-up](#mock-up)
 
 And a link to my repository: 
 
@@ -32,6 +32,10 @@ THEN I am presented with a 5-day forecast that displays the date, an icon repres
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
+
+## Usage
+Open the application with live server or with the current live link, type a city press go and see the Weather!
+
 ## Mock-Up:
 
 ![Dashboard](./images/Screen%20Shot%202022-11-28%20at%205.05.01%20PM.png)
