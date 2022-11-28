@@ -69,7 +69,7 @@ var Coordinants = function (lat, lon) {
           return response.json();
         }) .then(function(data) {
             $('.date').html('<h6>' + userCity + '</h6>', date(data.daily[i]))
-            $('.currentTemp').text('Temperature: ' + data.current.temp + ' ℉');
+            $('.currentTemp').text('Current Temperature: ' + data.current.temp + ' ℉');
             $('.humidity').text('Humidity: ' + data.current.humidity + '%')
             $('.windMPH').text('Wind: ' + data.current.wind_speed + ' mph')
             $('.uvIndex').html('UV Index: ' + `<span class="btnColor">${data.current.uvi}</span`);

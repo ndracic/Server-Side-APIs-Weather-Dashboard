@@ -1,0 +1,18 @@
+header {
+    justify-content: center;
+    background: rgb(247, 247, 247);
+    padding: 15px;
+  }
+  h6{
+    background: rgb(247, 247, 247);
+  }
+  .card {
+    width: 100%;
+    padding: 1px;
+  }
+  .day {
+    background-color: rgb(247, 247, 247);
+    padding: 5px;
+    margin: 10px;
+    border: 2px solid  rgb(249, 245, 247);
+  }
