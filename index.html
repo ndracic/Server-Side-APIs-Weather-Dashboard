@@ -13,50 +13,47 @@
 
 <body class="flex-column min-100-vh">
 
-        <header class="hero">
-            <h1 class="app-title"> 
-                <i class="fas fa-cloud-sun-rain"></i> Whats the Weather!</h1>
-            <p>Search for a City and check the current weather and the 5 day forecast!</p>
-        </header>
+  <header class="hero">
+      <h1 class="app-title"> 
+        <i class="fas fa-cloud-sun-rain"></i> Whats the Weather!</h1>
+        <p>Search for a City and check the current weather and the 5 day forecast!</p>
+   </header>
 
-        <main class="flex-row justify-space-between">
-            <div class="col-12 col-sm-12 col-md-4 float-left">
-        
-              <div class="card">
-                <label class="card-header text-uppercase" for="usersCity">Search By city</label>
-                  <input type="text" name="usersCity" id="usersCity" class="form-input" placeholder="Search City"/>
-                  <button type="submit" id="searchButton">Go</button>
+    <main class="flex-row justify-space-between">
+      <div class="col-12 col-sm-12 col-md-4 float-left">
+        <div class="card">
+            <label class="card-header text-uppercase" for="usersCity">Search By city</label>
+            <input type="text" name="usersCity" id="usersCity" class="form-input" placeholder="Search City"/>
+            <button type="submit" id="searchButton">Go</button>
+          </div>
+
+          <div class="card">
+            <h3 class="card-header text-uppercase" data-text="City" id="searchedCity">Searched Cities</h3>
+            <div id="searchedCity" class="card-body">
               </div>
-
-              <div class="card">
-                <h3 class="card-header text-uppercase" data-text="City" id="searchedCity">Searched Cities</h3>
-                <div id="searchedCity" class="card-body">
-                </div>
-              </div>
-            </div>
-        
-            <div class="currentWeather col-12 col-sm-12 col-md-8 float-right bg-light">
-                <div class="row p-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="date" data-text="City">Type a City and hit Go!</div>
-                      <br>
-                      <span class="currentTemp"></span>
-                      <br>
-                      <span class="humidity"> </span>
-                      <br>
-                      <span class="windMPH"> </span>
-                      <br>
-                      <span class="uvIndex"> </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="row p5">
-
-                <div class="forecast row"></div>
-              </div>
-
-         </main>
+             </div>
+           </div>
+       
+           <div class="currentWeather col-12 col-sm-12 col-md-8 float-right bg-light">
+               <div class="row p-4">
+                 <div class="card">
+                   <div class="card-body">
+                     <div class="date" data-text="City">Type a City and hit Go!</div>
+                     <br>
+                     <span class="currentTemp"></span>
+                     <br>
+                     <span class="humidity"> </span>
+                     <br>
+                     <span class="windMPH"> </span>
+                     <br>
+                     <span class="uvIndex"> </span>
+                   </div>
+                 </div>
+               </div>
+               <div class="row p5">
+               <div class="forecast row"></div>
+             </div>
+        </main>
 
     </div>
 
