@@ -16,8 +16,10 @@ var currentWeather = function (userCity) {
         console.log('Error');
         return;
       }
+      Coordinants(data.city.coord.lat, data.city.coord.lon);
     })
-}
+    .catch(err => console.log(err));
+};
 
 var searchedCity = JSON.parse(localStorage.getItem('City')) || [];
 
@@ -27,7 +29,7 @@ var searchedCity = JSON.parse(localStorage.getItem('City')) || [];
         historyButton.textContent = searchedCity[i];
         $('#searchedCity').append(historyButton); 
         searchedCitiesButton();
-}
+};
 
 function searchedCitiesButton() {
 
@@ -39,5 +41,21 @@ function searchedCitiesButton() {
         currentWeather(userCity);
       });
     });
-  }
+};
   
+  var searchButton = document.getElementById('searchButton');
+    searchButton.addEventListener('click', () => {
+      userCity = $("#usersCity").val();
+
+      currentWeather(userCity);
+      searchedCity.push(userCity);
+  
+  var cityButton = document.createElement('button');
+    cityButton.setAttribute('class', 'userCities');
+    cityButton.textContent = userCity;
+      $('#searchedCity').append(cityButton);
+  
+    localStorage.setItem('City', JSON.stringify(searchedCity));
+    searchedCitiesButton();
+    });
+
