@@ -59,3 +59,16 @@ function searchedCitiesButton() {
     searchedCitiesButton();
     });
 
+    var Coordinants = function (lat, lon) {
+        let conditionsAPI = 
+          `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=`+ key + `&units=imperial`
+      
+          // Fetch API
+          fetch(conditionsAPI)
+            .then(function (response) {
+              return response.json();
+            }) .then(function(data) {
+
+            })
+      
+      };
