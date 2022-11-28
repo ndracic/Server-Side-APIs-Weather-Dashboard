@@ -59,36 +59,59 @@ function searchedCitiesButton() {
     searchedCitiesButton();
     });
 
-    var Coordinants = function (lat, lon) {
-        var conditionsAPI = 
-          `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=`+ key + `&units=imperial`
-      
-          // Fetch API
-          fetch(conditionsAPI)
-            .then(function (response) {
-              return response.json();
-            }) .then(function(data) {
-      
-                $('.currentTemp').text('Temperature: ' + data.current.temp + ' ℉');
-
-                $('.humidity').text('Humidity: ' + data.current.humidity + '%')
-
-                $('.windMPH').text('Wind: ' + data.current.wind_speed + ' miles per hour')
-
-                $('.uvIndex').html('UV Index: ' + `<span class="btnColor">${data.current.uvi}</span`);
-
-                if (data.current.uvi <= 2) {
-                  $('.btnColor').attr('class', 'btn btn-success');
-                };
-            
-                // > 2, <= 5
-                if (data.current.uvi > 2 && data.current.uvi <= 5) {
-                  $('.btnColor').attr('class', 'btn btn-warning');
-                };
-            
-                // > 5
-                if (data.current.uvi > 5) {
-                  $('.btnColor').attr('class', 'btn btn-danger');
-                };
-              });
+var Coordinants = function (lat, lon) {
+    var conditionsAPI = 
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=`+ key + `&units=imperial`
+  
+      // Fetch API
+      fetch(conditionsAPI)
+        .then(function (response) {
+          return response.json();
+        }) .then(function(data) {
+            $('.date').html('<h6>' + userCity + '</h6>', date(data.daily[i]))
+            $('.currentTemp').text('Temperature: ' + data.current.temp + ' ℉');
+            $('.humidity').text('Humidity: ' + data.current.humidity + '%')
+            $('.windMPH').text('Wind: ' + data.current.wind_speed + ' mph')
+            $('.uvIndex').html('UV Index: ' + `<span class="btnColor">${data.current.uvi}</span`);
+            if (data.current.uvi <= 2) {
+              $('.btnColor').attr('class', 'btn btn-success');
             };
+        
+            if (data.current.uvi > 2 && data.current.uvi <= 5) {
+              $('.btnColor').attr('class', 'btn btn-warning');
+            };
+        
+            // > 5
+            if (data.current.uvi > 5) {
+              $('.btnColor').attr('class', 'btn btn-danger');
+            };
+            forecast(data);
+          });
+        };
+
+var forecast = function (data) {
+    $('.forecast').empty();
+    for (let i = 1; i < 4; i++) {
+  
+      var day = $("<div class = 'day bg-color-light'><div />")
+        $(day).append(date(data.daily[i].dt));
+        $(day).append(`<img src="https://openweathermap.org/img/w/${data.daily[i].weather[0].icon}.png"/>`);
+        $(day).append(`<p>Curr.Temp: ${data.daily[i].temp.day} ℉</p>`);
+        $(day).append(`<p>Wind: ${data.daily[i].wind_speed} mph</p>`);
+        $(day).append(`<p>Humidity: ${data.daily[i].humidity} % </p>`);
+  
+      $('.forecast').append(day)
+    };
+  }
+
+  const date = function (time) {
+    var currentDate = new Date();
+    currentDate.setTime(time * 1000);
+    //Get day as a number (1-31)
+    var days = currentDate.getDate();
+    //Get month as a number (0-11)
+    var months = currentDate.getMonth() + 1;
+    //Get year as a four digit number (yyyy)
+    var year = currentDate.getFullYear();
+    return months + '/' + days + '/' + year;
+  }
