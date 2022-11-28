@@ -35,6 +35,7 @@ THEN I am again presented with current and future conditions for that city
 
 ## Usage
 Open the application with live server or with the current live link, type a city press go and see the Weather!
+https://ndracic.github.io/Server-Side-APIs-Weather-Dashboard/
 
 ## Mock-Up:
 
